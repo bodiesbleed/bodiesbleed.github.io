@@ -1,1 +1,207 @@
-# bodiesbleed.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Glass border window */
+    .window {
+      position: relative;
+      padding: 42px 48px;
+      border-radius: 26px;
+      background: rgba(40, 40, 40, 0.45);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2em;
+      color: white;
+      text-shadow: 0 0 10px #ffffff;
+    }
+
+    /* Square profile image with rounded corners */
+    .profile-image {
+      width: 175px;
+      height: 175px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    }
+
+    .button-wrapper {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .button-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.6;
+      background: linear-gradient(to right, #B7CBF0, #220D54);
+      border-radius: 1rem;
+      filter: blur(15px);
+    }
+
+    .button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0.75rem 2rem;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: black;
+      background-color: #fff;
+      border-radius: 1rem;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(134,255,255,0.5);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .button-icon {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .button:hover {
+      box-shadow: 0 0 20px rgba(15,82,186,0.9), 0 0 15px rgba(255,255,255,0.7);
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 500px) {
+      .window {
+        padding: 20px 30px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+      .profile-image {
+        width: 100px;
+        height: 100px;
+      }
+      .button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1em;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <div class="window">
+    <img src="images/image1.jpg" alt="Profile" class="profile-image">
+    <h1>Listen</h1>
+
+    <div class="button-wrapper">
+      <div class="button-bg"></div>
+      <a href="https://soundcloud.com/bodiesbleed" class="button" target="_blank">
+        <img src="images/soundcloud.png" alt="SoundCloud" class="button-icon">SoundCloud
+      </a>
+    </div>
+
+    <div class="button-wrapper">
+      <div class="button-bg"></div>
+      <a href="https://open.spotify.com/artist/5MdkvBPJqj0m8WBzZXMQkH" class="button" target="_blank">
+        <img src="images/spotify.png" alt="Spotify" class="button-icon">Spotify
+      </a>
+    </div>
+
+    <div class="button-wrapper">
+      <div class="button-bg"></div>
+      <a href="https://music.apple.com/us/artist/bodies/1802037122" class="button" target="_blank">
+        <img src="images/apple.png" alt="Apple Music" class="button-icon">Apple Music
+      </a>
+    </div>
+
+    <div class="button-wrapper">
+      <div class="button-bg"></div>
+      <a href="https://instagram.com/bodiesbleed" class="button" target="_blank">
+        <img src="images/instagram.png" alt="Instagram" class="button-icon">Instagram
+      </a>
+    </div>
+
+    <div class="button-wrapper">
+      <div class="button-bg"></div>
+      <a href="https://x.com/bodiesbleed" class="button" target="_blank">
+        <img src="images/X.png" alt="X" class="button-icon">X/Twitter
+      </a>
+    </div>
+
+    <div class="button-wrapper">
+      <div class="button-bg"></div>
+      <a href="https://tiktok.com/@bodiesbleed" class="button" target="_blank">
+        <img src="images/tiktok.png" alt="TikTok" class="button-icon">TikTok
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      particlesJS("particles-js", {
+        "particles": {
+          "number": { "value": 200, "density": { "enable": true, "value_area": 800 } },
+          "color": { "value": "#ffffff" },
+          "shape": { "type": "star", "stroke": { "width": 0 }, "polygon": { "nb_sides": 5 } },
+          "opacity": { "value": 0.9, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.3, "sync": false } },
+          "size": { "value": 4, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 2, "sync": false } },
+          "line_linked": { "enable": false },
+          "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": { "onhover": { "enable": false }, "onclick": { "enable": false }, "resize": true }
+        },
+        "retina_detect": true
+      });
+    });
+  </script>
+
+<script type="text/javascript" src="/unprotected/back_to_spaceship.js?hash=4975d460e508829e8fb64d3962bc44ad35f3a95a"></script>
+
+</body>
+</html>
